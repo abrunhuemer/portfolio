@@ -1,14 +1,22 @@
 module.exports = {
   siteMetadata: {
       title: `Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.alexanderbrunhuemer.com`,
+     author: `Alexander Brunhuemer`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: [
+    "gatsby-plugin-image", 
+    "gatsby-plugin-react-helmet", 
+    "gatsby-plugin-sitemap", 
+    "gatsby-plugin-sharp", 
+    "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+    },
+    `gatsby-plugin-styled-components`
+  ]
 };
