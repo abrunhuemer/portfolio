@@ -4,18 +4,19 @@ import styled from "styled-components"
 
 const StyledHeader = styled.header`
     width: 100%;
-    max-width: 62.5rem;
     height: 6.25rem;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 5rem;
     background: white;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 `
+
 const StyledLogo = styled.div`
   font-size: 2rem;
-  font-weight: 900;
+  font-family:  'Fira Code', 'Andalé Mono', 'Courier New' ;
+  font-weight: 500;
   color: black;
 `
 
@@ -23,7 +24,7 @@ const Header = () => {
     return (
         <StyledHeader>
             <Link to="/" aria-label="Home">
-                <StyledLogo>AB.</StyledLogo>
+                <StyledLogo>&lt;Alexander Brunhuemer /&gt;</StyledLogo>
             </Link>
         </StyledHeader>
     )

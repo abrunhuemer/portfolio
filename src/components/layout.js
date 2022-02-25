@@ -14,21 +14,22 @@ const StyledLayout = styled.div`
     grid-template-columns: 100%;
     #main-content {
         width: 100%;
-        max-width: 62.5rem;
         margin: 0 auto;
-        padding: 0 2.5rem;
+        padding: 0 5rem;
     }
 `
 
-const Layout = ({children}) => {
-    return (
-        <StyledLayout>
-            <GlobalStyle />
-            <Header />
-            <main id="main-content">{children}</main>
-            <Footer />
-        </StyledLayout>
-    )
+class Layout extends React.Component {
+    render() {
+        return (
+            <StyledLayout>
+                <GlobalStyle />
+                <Header />
+                <main id="main-content">{this.props.children}</main>
+                <Footer />
+            </StyledLayout>
+        )
+    }
 }
 
 export default Layout
