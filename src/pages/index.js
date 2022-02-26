@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 import React from "react"
 import AboutMe from "../components/aboutme";
 import Layout from "../components/layout"
@@ -7,7 +8,7 @@ class Page extends React.Component {
   render() {
     return (
       <Layout>
-        <AboutMe />
+        <AboutMe content={this.props.data.about} />
         <Projects />
       </Layout>
     );
@@ -15,3 +16,18 @@ class Page extends React.Component {
 }
 
 export default Page 
+
+export const pageQuery = graphql`
+  query AboutSectionQuery {
+    about: markdownRemark(fileAbsolutePath: {regex: "/pages/aboutme.md/"}) {
+      frontmatter {
+        title
+        greetings
+        emoji
+        subtitlePrefix
+        subtitleHighlight
+      }
+      rawMarkdownBody
+    }
+  }
+`

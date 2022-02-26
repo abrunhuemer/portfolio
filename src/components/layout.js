@@ -4,6 +4,7 @@ import styled from "styled-components"
 import GlobalStyle from "./globalStyle"
 import Header from "./header"
 import Footer from "./footer"
+import { Line } from "./style-elements/line"
 
 const StyledLayout = styled.div`
     width: 100%;
@@ -25,6 +26,7 @@ class Layout extends React.Component {
             <StyledLayout>
                 <GlobalStyle />
                 <Header />
+                <Line />
                 <main id="main-content">{this.props.children}</main>
                 <Footer />
             </StyledLayout>

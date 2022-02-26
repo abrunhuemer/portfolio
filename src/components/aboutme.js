@@ -17,17 +17,24 @@ const StyledSection = styled.section`
 
 class AboutMe extends React.Component {
     render() {
+        const {frontmatter, rawMarkdownBody} = this.props.content;
+
         return (
-            <StyledSection id="projects">
+            <StyledSection id="aboutme">
                 <h1 className="title">
-                    Hello <span role="img" aria-label="emoji">👋</span><br />
-                    I'm Alexander Brunhuemer
+                    {frontmatter.greetings}{" "}
+                    <span role="img" aria-label="emoji">
+                    {frontmatter.emoji}
+                    </span>
+                    <br />
+                    {frontmatter.title}
                 </h1>
                 <h2 className="subtitle">
-                    I design and build <span className="highlighted">things for the web</span>.
+                    {frontmatter.subtitlePrefix}{" "}
+                    <span className="highlighted">{frontmatter.subtitleHighlight}</span>
                 </h2>
                 <div className="description">
-                    Product Manager and Freelance Web Developer. Based in Linz.
+                    {rawMarkdownBody}
                 </div>
             </StyledSection>
         );
