@@ -17,6 +17,7 @@ const StyledLogo = styled.div`
   font-size: 2rem;
   font-family:  'Fira Code', 'Andalé Mono', 'Courier New' ;
   font-weight: 500;
+  font-style: normal;
   color: black;
 `
 
